@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-bg text-zinc-100 antialiased; font-family: Georgia, 'Times New Roman', serif; }
+/* Animação suave de entrada dos cards */
+.fade { animation: fade .3s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
+/* Item encontrado pela busca: fica logo abaixo do topo e pisca em dourado */
+[id^='item-'] { scroll-margin-top: 5rem; }
+.found { animation: found 1.6s ease; }
+@keyframes found { 0%, 60% { box-shadow: 0 0 0 2px #fbbf24; } 100% { box-shadow: 0 0 0 2px transparent; } }
